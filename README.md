@@ -88,7 +88,7 @@ type DecodoConfig = {
 
 ## API Parameters
 
-See the [Scraper API documentation](https://help.decodo.com/docs/web-scraping-api-parameters) for a list of available parameters
+See the [Scraper API documentation](https://help.decodo.com/docs/web-scraping-api-parameters) for a list of available parameters.
 
 ## License
 
