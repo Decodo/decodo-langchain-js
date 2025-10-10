@@ -19,53 +19,34 @@ npm install @decodo/langchain-ts
 
 ## Quick Start
 
+Prerequisites:
+
+- Node.js >= v20
+- Decodo Web Advanced subscription
+
 To use the tools in this project, you will need a [Decodo Advanced Web Scraping API](https://help.decodo.com/docs/web-scraping-api-core-and-advanced-plans) subscription. Free trials are available on the [dashboard](https://dashboard.decodo.com/).
 
 Once you have a plan activated, take a note of your generated username and password:
 
 ![Decodo dashboard](img/auth.png 'Decodo dashboard')
 
-A simple agentic example:
+1. Clone this repo and install dependencies:
 
-```typescript
-import dotenv from 'dotenv';
-import { ChatOpenAI } from '@langchain/openai';
-import { createReactAgent } from '@langchain/langgraph/prebuilt';
-import { DecodoUniversalTool } from '@decodo/langchain-ts';
-
-dotenv.config();
-
-const main = async () => {
-  const username = process.env.SCRAPER_API_USERNAME!;
-  const password = process.env.SCRAPER_API_PASSWORD!;
-
-  const decodoUniversalTool = new DecodoUniversalTool({ username, password });
-
-  const model = new ChatOpenAI({
-    model: 'gpt-4o-mini',
-  });
-
-  const agent = createReactAgent({
-    llm: model,
-    tools: [decodoUniversalTool],
-  });
-
-  const result = await agent.invoke({
-    messages: [
-      {
-        role: 'user',
-        content: 'scrape the wikipedia NBA 2025 season page and tell me who won in 2025?',
-      },
-    ],
-  });
-
-  console.log(result.messages[result.messages.length - 1].content);
-};
-
-if (require.main === module) {
-  main();
-}
 ```
+git clone git@github.com:Decodo/decodo-langchain-ts.git
+cd decodo-langchain-ts
+npm i
+```
+
+2. Run any of the sample agents:
+
+```
+npm run example:agent-universal
+npm run example:agent-google
+npm run example:agent-amazon
+```
+
+A simple agentic example:
 
 ## Available Tools
 

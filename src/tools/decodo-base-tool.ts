@@ -62,7 +62,7 @@ export class DecodoBaseTool extends StructuredTool<InputSchemaZodType> {
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.error(input);
+        console.error(error?.response?.data);
         throw new Error(`Decodo API error: ${JSON.stringify(error.response?.data)}`);
       }
       throw error;
