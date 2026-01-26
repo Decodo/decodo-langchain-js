@@ -1,6 +1,4 @@
-import { ScraperApiResponse, TARGET } from '@decodo/sdk-ts';
-
-import { DecodoConfig } from '../../types';
+import { DecodoConfig, ScraperApiResponse } from '../../types';
 import { SubredditInputType } from './schema';
 import { DecodoBaseTool } from '../decodo-base-tool';
 
@@ -14,7 +12,7 @@ export class DecodoRedditSubredditTool extends DecodoBaseTool {
   }
 
   async _call(params: SubredditInputType): Promise<ScraperApiResponse> {
-    const toolParams = { ...params, target: TARGET.REDDIT_SUBREDDIT, parse: false };
+    const toolParams = { ...params, target: 'reddit_subreddit', parse: false };
 
     return this.callBase(toolParams);
   }

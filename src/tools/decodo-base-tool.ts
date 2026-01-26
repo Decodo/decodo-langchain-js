@@ -1,9 +1,9 @@
 import axios, { AxiosInstance } from 'axios';
 import { StructuredTool } from '@langchain/core/tools';
-import { SCRAPER_API_ENDPOINT_SYNC, ScraperApiResponse } from '@decodo/sdk-ts';
 
 import { inputSchema, InputSchemaZodType, InputType } from '../schema';
-import { DecodoConfig } from '../types';
+import { DecodoConfig, ScraperApiResponse } from '../types';
+import { SCRAPER_API_ENDPOINT_SYNC } from '../constants';
 
 export class DecodoBaseTool extends StructuredTool<InputSchemaZodType> {
   public name = 'decodo_tool';

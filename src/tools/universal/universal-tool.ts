@@ -1,5 +1,4 @@
-import { ScraperApiResponse } from '@decodo/sdk-ts';
-import { DecodoConfig } from '../../types';
+import { DecodoConfig, ScraperApiResponse } from '../../types';
 import { InputType } from '../../schema';
 import { DecodoBaseTool } from '../decodo-base-tool';
 
